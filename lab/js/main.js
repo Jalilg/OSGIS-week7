@@ -21,7 +21,7 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
 
 Load the dataset into our application. Set the 'dataset' variable to the address for
 'philadelphia-garbage-collection-boundaries.geojson' in the class dataset repository
-https://raw.githubusercontent.com/CPLN-692-401/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
+https://raw.githubusercontent.com/CPLN692-MUSA611-Open-Source-GIS/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson
 
 You should now have GeoJSON data projected onto your map!
 
@@ -97,18 +97,19 @@ to each box. Position the legend on top of the map (hint: you can use absolute
 positioning, which is the technique used to position the sidebar and map on this
 page).
 
-## Task 6 (Stretch goal)
+## Task 6
+
+Use fitBounds (http://leafletjs.com/reference.html#map-fitbounds) to zoom in and
+center the map on one particular feature. To find the bounds for a feature, use
+event.target.getBounds() inside of the layer.on function see
+https://leafletjs.com/reference-1.7.1.html#evented for more on using events.
+
+## Task 7 (Stretch goal)
 
 Let's associate the leaflet ID (we can use this to look up a leaflet layer) with
 our HTML element. Try to use the `getLayerId` method of `L.FeatureGroup` and
 `L.LayerGroup` (on myFeatureGroup) below.
 With it, add the Leaflet ID to the information provided on the left.
-
-## Task 7 (Stretch Goal)
-
-Use fitBounds (http://leafletjs.com/reference.html#map-fitbounds) to zoom in and
-center the map on one particular feature. To find the bounds for a feature, use
-event.target.getBounds() inside of the layer.on function.
 
 ## Task 8 (Stretch Goal)
 
@@ -121,7 +122,7 @@ application.
 
 Use Underscore to perform analysis on this GeoJSON data: which day of
 the week was the most common for garbage removal? Update the original state
-of the application to report this information.
+of the application to report/display this information.
 
 ===================== */
 

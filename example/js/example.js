@@ -26,7 +26,7 @@ var tileOpts = {
 var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', tileOpts).addTo(map);
 
 // Ajax to grab json
-var getData = $.ajax('https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/world-country-capitals.json')
+var getData = $.ajax('https://raw.githubusercontent.com/CPLN692-MUSA611-Open-Source-GIS/datasets/master/json/world-country-capitals.json')
 
 /* =====================
   Parse and store data for later use
@@ -114,12 +114,15 @@ var filterAndPlot = function() {
  * Note the naming scheme - the 'onEventOccurrence' naming scheme is very common for functions
  * such as this.
  */
+
+// Check out the use of 'e' in the following functions. It allows you to inspect data from the
+// event which are registered in `bindEvents` (the function on line 134)
 var onStringFilterChange = function(e) {
   stringFilter = e.target.value.toLowerCase();
   filterAndPlot();
 };
 
-var onSelectChange = function() {
+var onSelectChange = function(e) {
   selectValue = e.target.value;
   filterAndPlot();
 };

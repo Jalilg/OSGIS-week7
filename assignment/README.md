@@ -3,9 +3,9 @@
 ## Introduction
 
 For your [midterm project](https://github.com/MUSA611-CPLN692-spring2020/midterm),
-you will create a story map application. The midterm is due by March 30
-(we will get some time to work in-class on March 27th) . The assignment for
-Week 7 will have you gather data and think about functions you might use
+you will create a story map application. The midterm is due by start of class,
+April 2nd (we will get some time to work in-class on March 26th). The assignment
+this week will have you gather data and think about functions you might use
 in preparation for the midterm. You are also welcome to get started on
 writing the midterm if you are so inclined.
 
@@ -74,7 +74,7 @@ var nValuesLogged = function(n: number, values: array) {};
 ```
 
 Try this as an exercise in imagining the higher level structure of your
-code. We're not writing javascript so much as outlining how our
+code. We're not writing javascript! Here, we are trying to outline how our
 javascript will be written. Try to describe your functions in terms of
 the types of things you expect to put in and the types of things you
 expect to get out.
