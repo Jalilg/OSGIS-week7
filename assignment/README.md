@@ -16,7 +16,7 @@ Think about what data you want to tell a story about. You can choose a dataset
 from any of the following sources:
 
 - Use data you've been working with for another class
-- Find data from an open data repository (see [third party data repository](https://github.com/MUSA611-CPLN692-spring2020/datasets)
+- Find data from an open data repository (see [third party data repository](https://github.com/CPLN692-MUSA611-Open-Source-GIS/datasets)
 for a few potential sources)
 - Create your own dataset (check out [geojson.io](http://geojson.io))
 
