@@ -126,12 +126,20 @@ of the application to report/display this information.
 
 ===================== */
 
-var dataset = ""
+var dataset = "https://raw.githubusercontent.com/CPLN692-MUSA611-Open-Source-GIS/datasets/master/geojson/philadelphia-garbage-collection-boundaries.geojson"
 var featureGroup;
 
 var myStyle = function(feature) {
-  return {};
+  switch (feature.properties.COLLDAY) {
+    case 'FRI':   return {color: "red"};
+    case 'MON':   return {color: "blue"};
+    case 'TUE':   return {color: "green"};
+    case 'WED':   return {color: "gray"};
+    case 'THU':   return {color: "purple"};
+
+}
 };
+
 
 var showResults = function() {
   /* =====================
@@ -154,14 +162,45 @@ var eachFeatureFunction = function(layer) {
     Check out layer.feature to see some useful data about the layer that
     you can use in your application.
     ===================== */
+
+if (layer.feature.properties.COLLDAY == 'MON')
+{$('.day-of-week').text("Monday")}
+
+else if (layer.feature.properties.COLLDAY == 'TUE')
+{$('.day-of-week').text("Tuesday")}
+
+else if (layer.feature.properties.COLLDAY == 'WED')
+{$('.day-of-week').text("Wednesday")}
+
+else if (layer.feature.properties.COLLDAY == 'THU')
+{$('.day-of-week').text("Thursday")}
+
+else 
+{$('.day-of-week').text("Friday")}
+
+
     console.log(layer.feature);
     showResults();
+    map.fitBounds(event.target.getBounds(), { maxZoom: 14 })
+
   });
 };
 
 var myFilter = function(feature) {
-  return true;
+  switch (feature.properties.COLLDAY) {
+    case 'FRI':   return true;
+    case 'MON':   return true;
+    case 'TUE':   return true;
+    case 'WED':   return true;
+    case 'THU':   return true;
+}
 };
+
+/* var myFilter = function(feature) {
+  if(feature.properties.COLLDAY != 'Mon' | feature.properties.COLLDAY != "TUE"| feature.properties.COLLDAY != "WED"| feature.properties.COLLDAY != "THU"| feature.properties.COLLDAY != "FRI"){
+  return true;} 
+}; */
+
 
 $(document).ready(function() {
   $.ajax(dataset).done(function(data) {
@@ -175,3 +214,7 @@ $(document).ready(function() {
     featureGroup.eachLayer(eachFeatureFunction);
   });
 });
+
+event.target.getBounds()
+
+event.target.getBounds()
